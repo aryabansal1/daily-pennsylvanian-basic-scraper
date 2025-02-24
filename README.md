@@ -135,3 +135,20 @@ But it is important to use it responsibly and ethically. Here are some guideline
 9. Document your scraping process thoroughly for replicability, transparency and accountability.
 
 10. Continuously re-evaluate your scraping program against applicable laws and ethical principles.
+
+## Changes Made
+I made the following changes to adapt the scraper to a more specific use case:
+
+1. **Targeted the "Featured" Section:**
+   - Updated the scraping logic to extract the **top headline from the "Featured" section** instead of the general front-page headline.
+   - Identified and used the CSS class `"frontpage-link standard-link"` to locate the correct article.
+
+2. **Refined the HTML Parsing Strategy:**
+   - Adjusted the **BeautifulSoup selector** to match the updated website structure.
+   - Ensured that only the **topmost featured article** is retrieved.
+
+
+## Reasoning Behind These Changes
+- The previous approach only scraped the **largest front-page link**, which may not always be the most relevant or featured story.
+- By specifically targeting the **"Featured" section**, we ensure the scraper pulls **prominent news articles** rather than general homepage headlines.
+- The updated selector is **more precise**, reducing the risk of scraping incorrect data due to website changes.
