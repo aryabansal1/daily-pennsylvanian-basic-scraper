@@ -152,3 +152,16 @@ I made the following changes to adapt the scraper to a more specific use case:
 - The previous approach only scraped the **largest front-page link**, which may not always be the most relevant or featured story.
 - By specifically targeting the **"Featured" section**, we ensure the scraper pulls **prominent news articles** rather than general homepage headlines.
 - The updated selector is **more precise**, reducing the risk of scraping incorrect data due to website changes.
+
+## Original Cron job explanation
+
+The cron expression `"0 20 * * *"` in the GitHub Actions workflow means that the job runs **once per day at 8:00 PM UTC**. 
+
+The five fields in the cron expression represent:
+- **Minute (`0`)** → The job starts at the beginning of the hour.
+- **Hour (`20`)** → The job runs at 20:00 UTC (8:00 PM).
+- **Day of Month (`*`)** → Runs every day of the month.
+- **Month (`*`)** → Runs every month.
+- **Day of Week (`*`)** → Runs every day of the week.
+
+This ensures that the scraper executes daily at the specified time.
